@@ -24,6 +24,15 @@ app.get('/json', (req, res) => {
     res.json({ "message": message });
 });
 
+const addCurrentTime = (req, res, next) => {
+    req.time = new Date().toString();
+    next();
+}
+
+app.get('/now', addCurrentTime, (req, res) => {
+    res.json({ time: req.time });
+});
+
 
 
 
