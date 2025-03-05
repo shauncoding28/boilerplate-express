@@ -49,7 +49,14 @@ app.route('/name').get((req, res) => {
     const fullName = `${firstName} ${lastName}`;
 
     res.json({ name: fullName });
-})
+}).post((req, res) => {
+    const firstName = req.body.first;
+    const lastName = req.body.last;
+
+    const fullName = `${firstName} ${lastName}`;
+
+    res.json({ name: fullName });
+});
 
 
 
