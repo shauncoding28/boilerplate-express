@@ -4,7 +4,10 @@ let app = express();
 const path = require('path');
 
 
-
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.path} - ${req.ip}`);
+    next();
+})
 
 console.log('Hello World');
 
