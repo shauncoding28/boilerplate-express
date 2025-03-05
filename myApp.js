@@ -4,8 +4,8 @@ let app = express();
 console.log('Hello World');
 
 
-app.get('/', () => {
-    this.resource.send("Hello Express");
+app.get('/', (req, res) => {
+    res.send("Hello Express");
 });
 
 
