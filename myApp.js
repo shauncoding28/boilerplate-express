@@ -33,6 +33,11 @@ app.get('/now', addCurrentTime, (req, res) => {
     res.json({ time: req.time });
 });
 
+app.get('/:word/echo', (req, res) => {
+    const word = req.params.word;
+    res.json({ echo: word });
+});
+
 
 
 
